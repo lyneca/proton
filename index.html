@@ -2,25 +2,48 @@
 <html>
 
 <head>
-  <div id='window-toolbar'>
-    <div id='window-title'>
-
-    </div>
-    <div id='window-controls'>
-      <div id='window-minimise' class='button window-control'>
-
-      </div>
-      <div id='window-maximise' class='button window-control'>
-
-      </div>
-      <div id='window-close' class='button window-control'>
-
-      </div>
-    </div>
-  </div>
+  <link href="./node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="global.css" rel="stylesheet" type="text/css" />
+  <script>
+    window.$ = window.jquery = require('jquery')
+  </script>
 </head>
 
 <body>
+  <div id='window-toolbar'>
+    <div id='window-title'>
+      Proton
+    </div>
+    <div id='window-controls'>
+      <div id='window-minimise' class='button window-control'>
+      </div>
+      <div id='window-maximise' class='button window-control'>
+      </div>
+      <div id='window-close' class='button window-control'>
+      </div>
+    </div>
+  </div>
+  <div id='container'>
+    <div>
+
+    </div>
+  </div>
+  <script>
+    var remote = require('electron').remote;
+    var win = remote.getCurrentWindow();
+    resizeContent(56)
+
+    function resizeContent(h) {
+      var height = win.getBounds().height - h
+      $('#container').css('height', height)
+    }
+    win.on('resize', function() {
+      resizeContent(56)
+    })
+    win.on('maximize', function() {
+      resizeContent(70)
+    })
+  </script>
 
 </body>
 
