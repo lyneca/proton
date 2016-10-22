@@ -15,11 +15,11 @@
       Proton
     </div>
     <div id='window-controls'>
-      <div id='window-minimise' class='button window-control'>
+      <div id='window-minimize' class='button window-control' onclick="win.minimize()">
       </div>
-      <div id='window-maximise' class='button window-control'>
+      <div id='window-maximize' class='button window-control' onclick="win.maximize()">
       </div>
-      <div id='window-close' class='button window-control'>
+      <div id='window-close' class='button window-control' onclick="win.close()">
       </div>
     </div>
   </div>
@@ -41,7 +41,13 @@
       resizeContent(56)
     })
     win.on('maximize', function() {
-      resizeContent(70)
+      resizeContent(70);
+      $('#window-maximize').attr("onclick", "win.unmaximize()")
+    })
+
+    win.on('unmaximize', function() {
+      $('#window-maximize').attr("onclick", "win.maximize()")
+      resizeContent(56)
     })
   </script>
 

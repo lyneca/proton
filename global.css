@@ -60,27 +60,27 @@ div {
   float: right;
 }
 
-#window-minimise {
+#window-minimize {
   background-color: #484C34;
 }
 
-#window-minimise:hover {
+#window-minimize:hover {
   background-color: #706030;
 }
 
-#window-minimise:active {
+#window-minimize:active {
   background-color: #605030;
 }
 
-#window-maximise {
+#window-maximize {
   background-color: #284C34;
 }
 
-#window-maximise:hover {
+#window-maximize:hover {
   background-color: #307030;
 }
 
-#window-maximise:active {
+#window-maximize:active {
   background-color: #305030;
 }
 
